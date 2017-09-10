@@ -1,0 +1,9 @@
+{
+  "name": "fastbill",
+  "version": "1.0.0",
+  "description": "A modern fastbill API wrapper",
+  "main": "index.js",
+  "repository": "git@github.com:johannes-scharlach/fastbill.git",
+  "author": "Johannes Scharlach <johannes.scharlach@gmail.com>",
+  "license": "MIT"
+}
