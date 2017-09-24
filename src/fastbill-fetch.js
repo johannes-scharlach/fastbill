@@ -9,9 +9,9 @@ module.exports = ({ email, apiKey }) => obj =>
     method: 'POST',
     body: JSON.stringify(obj),
     headers: {
-      'conten-type': 'application/json',
-      authentication: `Basic ${Buffer.from(`${email}:${apiKey}`).toString(
+      'Content-Type': 'application/json',
+      Authorization: `Basic ${Buffer.from(`${email}:${apiKey}`).toString(
         'base64'
       )}`
     }
-  })
+  }).then(result => result.json())
