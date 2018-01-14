@@ -8,6 +8,6 @@ const missing = desc => {
 module.exports = (
   {
     email = missing('options.email'),
-    apiKey = missing('options.apiKey')
+    apiKey = missing('options.apiKey'),
   } = missing('Options object')
 ) => apiMethods({ email, apiKey })

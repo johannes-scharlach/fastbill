@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  getConsumerErrors (obj) {
+  getConsumerErrors(obj) {
     const errs = []
 
     if (obj.CUSTOMER_TYPE === 'business') {
@@ -10,7 +10,9 @@ module.exports = {
 
     if (obj.CUSTOMER_TYPE !== 'consumer') {
       errs.push(
-        `Prop "customer_type" may be "consumer". Received "${obj.CUSTOMER_TYPE}"`
+        `Prop "customer_type" may be "consumer". Received "${
+          obj.CUSTOMER_TYPE
+        }"`
       )
     }
 
@@ -21,5 +23,5 @@ module.exports = {
     }
 
     return errs.length ? errs : null
-  }
+  },
 }

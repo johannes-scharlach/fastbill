@@ -14,10 +14,10 @@ module.exports = ({ email, apiKey }) => {
   const fetchBody = fastbillFetch({ email, apiKey })
 
   const customer = {
-    get (options) {
+    get(options) {
       throw Error('customer.get was not implemented yet')
     },
-    create ({ data }) {
+    create({ data }) {
       data = uppercaseKeys(data)
       const errors = validations.getConsumerErrors(data)
 
@@ -27,22 +27,22 @@ module.exports = ({ email, apiKey }) => {
 
       const body = {
         service: 'customer.create',
-        data
+        data,
       }
 
       return fetchBody(uppercaseKeys(body)).then(({ RESPONSE }) => ({
-        response: lowercaseKeys(RESPONSE)
+        response: lowercaseKeys(RESPONSE),
       }))
     },
-    update (options) {
+    update(options) {
       throw Error('customer.update was not implemented yet')
     },
-    delete (options) {
+    delete(options) {
       throw Error('customer.delete was not implemented yet')
-    }
+    },
   }
 
   return {
-    customer
+    customer,
   }
 }

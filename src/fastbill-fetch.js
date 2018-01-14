@@ -12,6 +12,6 @@ module.exports = ({ email, apiKey }) => obj =>
       'Content-Type': 'application/json',
       Authorization: `Basic ${Buffer.from(`${email}:${apiKey}`).toString(
         'base64'
-      )}`
-    }
+      )}`,
+    },
   }).then(result => result.json())

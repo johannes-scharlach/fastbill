@@ -6,7 +6,7 @@ const generateMethods = ({ fbFetch = jest.fn() } = {}) => {
 
   return require('./api-methods.js')({
     email: 'email@example.com',
-    apiKey: 'myKey'
+    apiKey: 'myKey',
   })
 }
 
@@ -30,8 +30,8 @@ describe('apiMethods', () => {
           data: {
             customer_type: 'consumer',
             last_name: 'Müller',
-            first_name: 'Max'
-          }
+            first_name: 'Max',
+          },
         })
 
         expect(fbFetch).toHaveBeenCalledTimes(1)
@@ -40,8 +40,8 @@ describe('apiMethods', () => {
             DATA: {
               CUSTOMER_TYPE: 'consumer',
               LAST_NAME: 'Müller',
-              FIRST_NAME: 'Max'
-            }
+              FIRST_NAME: 'Max',
+            },
           })
         )
       })
@@ -52,8 +52,8 @@ describe('apiMethods', () => {
           Promise.resolve({
             RESPONSE: {
               CUSTOMER_ID: 123,
-              STATUS: 'success'
-            }
+              STATUS: 'success',
+            },
           })
         )
 
@@ -63,15 +63,15 @@ describe('apiMethods', () => {
           .create({
             data: {
               customer_type: 'consumer',
-              last_name: 'Müller'
-            }
+              last_name: 'Müller',
+            },
           })
           .then(result => {
             expect(result).toEqual({
               response: {
                 customer_id: 123,
-                status: 'success'
-              }
+                status: 'success',
+              },
             })
           })
       })
